@@ -1,0 +1,30 @@
+{
+  "name": "patterns",
+  "version": "1.0.0",
+  "description": "js design patterns",
+  "main": "index.js",
+  "scripts": {
+    "server": "webpack-dev-server",
+    "dev": "npm run server -- --env.mode development",
+    "prod": "npm run webpack -- --env.mode development",
+    "webpack": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/turisap/JS-design-patterns.git"
+  },
+  "author": "turisap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/turisap/JS-design-patterns/issues"
+  },
+  "homepage": "https://github.com/turisap/JS-design-patterns#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  }
+}
