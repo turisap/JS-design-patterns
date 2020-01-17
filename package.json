@@ -6,7 +6,8 @@
   "scripts": {
     "server": "webpack-dev-server",
     "dev": "npm run server -- --env.mode development",
-    "prod": "npm run webpack -- --env.mode development",
+    "build:debug": "npm run webpack -- --env.mode development",
+    "build:prod": "npm run webpack -- --env.mode production",
     "webpack": "webpack"
   },
   "repository": {
@@ -26,5 +27,8 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
+  },
+  "dependencies": {
+    "ramda": "^0.26.1"
   }
 }
