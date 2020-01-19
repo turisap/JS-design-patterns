@@ -12,25 +12,37 @@ import { times } from "ramda";
 //   if (guess.done) break;
 // }
 
-import visitorsProcessor from "./revealingModule";
+// import visitorsProcessor from "./revealingModule";
 
-let users = times(
-  () => ({
-    id: Math.random(),
-    name: "user"
-  }),
-  10
-);
+// let users = times(
+//   () => ({
+//     id: Math.random(),
+//     name: "user"
+//   }),
+//   10
+// );
 
-const anotherUser = { id: 1, name: "me" };
+// const anotherUser = { id: 1, name: "me" };
 
-users = users.concat([anotherUser, anotherUser, anotherUser, anotherUser]);
+// users = users.concat([anotherUser, anotherUser, anotherUser, anotherUser]);
 
-visitorsProcessor.process(users);
+// visitorsProcessor.process(users);
 
-const stats = visitorsProcessor.process([
-  { id: 2, name: "Tai" },
-  { id: 3, name: "Gab" }
-]);
+// const stats = visitorsProcessor.process([
+//   { id: 2, name: "Tai" },
+//   { id: 3, name: "Gab" }
+// ]);
 
-console.log(stats);
+// console.log(stats);
+
+import UserStore from "./singleton";
+
+let store = UserStore.getInstance();
+store.logId();
+
+store = UserStore.getInstance();
+store.logId();
+
+store.setItem({ id: 1, name: "kirill" });
+store.setItem({ id: 2, name: "andrey" });
+console.log(store.getItem(1));
