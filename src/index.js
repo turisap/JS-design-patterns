@@ -47,10 +47,34 @@ import { times } from "ramda";
 // store.setItem({ id: 2, name: "andrey" });
 // console.log(store.getItem(1));
 
-import { EventEmmiter, addEventHandler } from "./observer";
+// import { EventEmmiter, addEventHandler } from "./observer";
 
-// subscribing
+// // subscribing
 
-addEventHandler(EventEmmiter);
+// addEventHandler(EventEmmiter);
 
-EventEmmiter.start();
+// EventEmmiter.start();
+
+import { Chatroom, Participant, log } from "./mediator";
+
+const chat = new Chatroom(123);
+
+const kirill = new Participant("kirill");
+const john = new Participant("john");
+const kate = new Participant("kate");
+const carl = new Participant("carl");
+
+chat.register(kirill);
+chat.register(john);
+chat.register(kate);
+chat.register(carl);
+
+chat.send("hey", kirill, kate);
+chat.send("I am new here", carl);
+chat.send("Hey, me to", john, carl);
+chat.send("Do you guys like beer", kate);
+chat.send("I love it!", john);
+
+console.log(log.size);
+
+log.forEach(log => console.log(log));
