@@ -35,14 +35,22 @@ import { times } from "ramda";
 
 // console.log(stats);
 
-import UserStore from "./singleton";
+// import UserStore from "./singleton";
 
-let store = UserStore.getInstance();
-store.logId();
+// let store = UserStore.getInstance();
+// store.logId();
 
-store = UserStore.getInstance();
-store.logId();
+// store = UserStore.getInstance();
+// store.logId();
 
-store.setItem({ id: 1, name: "kirill" });
-store.setItem({ id: 2, name: "andrey" });
-console.log(store.getItem(1));
+// store.setItem({ id: 1, name: "kirill" });
+// store.setItem({ id: 2, name: "andrey" });
+// console.log(store.getItem(1));
+
+import { EventEmmiter, addEventHandler } from "./observer";
+
+// subscribing
+
+addEventHandler(EventEmmiter);
+
+EventEmmiter.start();
