@@ -79,14 +79,25 @@ import { times } from "ramda";
 
 // log.forEach(log => console.log(log));
 
-import AuthenticationController from "./command";
+// import AuthenticationController from "./command";
 
-const token = AuthenticationController.execute("getAccessToken", 123);
+// const token = AuthenticationController.execute("getAccessToken", 123);
 
-const assessGranted = AuthenticationController.execute(
-  "authenticate",
-  "sladjf@f34FDF"
-);
+// const assessGranted = AuthenticationController.execute(
+//   "authenticate",
+//   "sladjf@f34FDF"
+// );
 
-console.log(token, assessGranted);
-AuthenticationController.execute("logout", 234234);
+// console.log(token, assessGranted);
+// AuthenticationController.execute("logout", 234234);
+
+import UserFactory from "./factory";
+
+const admin = UserFactory.createUser({ userType: "admin" }, 1);
+const me = UserFactory.createUser({ userType: "admin", name: "kirill" }, 5);
+const guest = UserFactory.createUser({ userType: "user", name: "luke" }, 1);
+
+console.log(guest);
+console.log(admin);
+console.log(me);
+console.log(me[0].constructor.name);
