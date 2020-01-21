@@ -55,26 +55,38 @@ import { times } from "ramda";
 
 // EventEmmiter.start();
 
-import { Chatroom, Participant, log } from "./mediator";
+// import { Chatroom, Participant, log } from "./mediator";
 
-const chat = new Chatroom(123);
+// const chat = new Chatroom(123);
 
-const kirill = new Participant("kirill");
-const john = new Participant("john");
-const kate = new Participant("kate");
-const carl = new Participant("carl");
+// const kirill = new Participant("kirill");
+// const john = new Participant("john");
+// const kate = new Participant("kate");
+// const carl = new Participant("carl");
 
-chat.register(kirill);
-chat.register(john);
-chat.register(kate);
-chat.register(carl);
+// chat.register(kirill);
+// chat.register(john);
+// chat.register(kate);
+// chat.register(carl);
 
-chat.send("hey", kirill, kate);
-chat.send("I am new here", carl);
-chat.send("Hey, me to", john, carl);
-chat.send("Do you guys like beer", kate);
-chat.send("I love it!", john);
+// chat.send("hey", kirill, kate);
+// chat.send("I am new here", carl);
+// chat.send("Hey, me to", john, carl);
+// chat.send("Do you guys like beer", kate);
+// chat.send("I love it!", john);
 
-console.log(log.size);
+// console.log(log.size);
 
-log.forEach(log => console.log(log));
+// log.forEach(log => console.log(log));
+
+import AuthenticationController from "./command";
+
+const token = AuthenticationController.execute("getAccessToken", 123);
+
+const assessGranted = AuthenticationController.execute(
+  "authenticate",
+  "sladjf@f34FDF"
+);
+
+console.log(token, assessGranted);
+AuthenticationController.execute("logout", 234234);

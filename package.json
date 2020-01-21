@@ -29,6 +29,7 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "ramda": "^0.26.1"
+    "ramda": "^0.26.1",
+    "uuid": "^3.4.0"
   }
 }
